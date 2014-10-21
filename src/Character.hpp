@@ -1,12 +1,12 @@
-#include <SFML/Vector2.hpp>
-#include <SFML/Sprite.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
 
 class Character 
 {
 public:
-	character();
+	Character();
 private:
-	sf::Vector2 position;
+	sf::Vector2<float> position;
 	sf::Sprite sprite;
 
 
