@@ -8,11 +8,14 @@ PROGNAME=executioner
 .PHONY: clean
 
 all: $(PROGNAME)
-$(PROGNAME): main.o
-	$(CC) $(INCLUDES) main.o $(LIBRARYDIR) $(LIBS) -o ../bin/$(PROGNAME).exe 
+$(PROGNAME): main.o Character.o
+	$(CC) $(INCLUDES) main.o Character.o $(LIBRARYDIR) $(LIBS) -o ../bin/$(PROGNAME).exe 
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) $(INCLUDES) main.cpp
+
+Character.o: Character.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) Character.cpp
 
 clean:
 	rm *.o
