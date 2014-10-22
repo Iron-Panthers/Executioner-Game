@@ -1,16 +1,14 @@
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
-
 #include "Character.hpp"
 
-Character::Character()
-
+Character::Character(std::string imagePath)
 {
-	sf::Texture tex;
-	tex.loadFromFile("../imgs/bbc.jpeg");
+	tex.loadFromFile(imagePath);
 
-	sprite = sf::Sprite(tex);
+	sprite.setTexture(tex);
 	sprite.setPosition(1, 1);	
 }
 
-#endif
+sf::Sprite& Character::getSprite()
+{
+	return sprite;
+}
