@@ -1,14 +1,23 @@
-#include <sfml/Sprite.hpp>
-#include <Character.hpp>
-#include <sfml/Keyboard.hpp>
+#ifndef GAMESTATE_HPP
+#define GAMESTATE_HPP
+#include "Character.hpp"
+#include <vector>
 
 class GameState
 {
 public:
-	update();
-	draw();
-	handleInput();
+	void update();
+	void draw();
+	void handleInput();
+	sf::RenderWindow& getWindow();
+
+	GameState();
 	
 private:
+	sf::RenderWindow window;
+	std::vector<Character> characters;
 
-}
+
+};
+
+#endif

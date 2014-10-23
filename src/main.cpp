@@ -1,21 +1,15 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include "Character.hpp"
+#include "GameState.hpp"
 
 int main()
 {
-	sf::RenderWindow window (sf::VideoMode (800, 600), "SFML window");
+	GameState gameState;
 
-	while (window.isOpen())
+	while (gameState.getWindow().isOpen())
 	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-
-		window.clear();
-		window.display();
+		gameState.update();
 	}
 
 	return EXIT_SUCCESS;
