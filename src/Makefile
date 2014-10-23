@@ -8,14 +8,17 @@ PROGNAME=executioner
 .PHONY: clean
 
 all: $(PROGNAME)
-$(PROGNAME): main.o Character.o
-	$(CC) $(INCLUDES) main.o Character.o $(LIBRARYDIR) $(LIBS) -o ../bin/$(PROGNAME).exe 
+$(PROGNAME): Character.o GameState.o main.o 
+	$(CC) $(INCLUDES) GameState.o Character.o main.o $(LIBRARYDIR) $(LIBS) -o ../bin/$(PROGNAME).exe 
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) $(INCLUDES) main.cpp
 
 Character.o: Character.cpp
 	$(CC) $(CFLAGS) $(INCLUDES) Character.cpp
+
+GameState.o: GameState.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) GameState.cpp
 
 clean:
 	rm *.o
