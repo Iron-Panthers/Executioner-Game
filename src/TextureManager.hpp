@@ -7,12 +7,10 @@
 class TextureManager
 {
 public:
-	void getTexture();
-
+	sf::Texture getTexture();
 
 private:
-	std::map
-
+	std::map<std::string, sf::Texture>
 
 };
 
