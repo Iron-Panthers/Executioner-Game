@@ -12,11 +12,14 @@ public:
 	sf::RenderWindow& getWindow();
 
 	GameState();
-	
+
+	TextureManager* getTextureMgr();
+
 private:
 	sf::RenderWindow window;
 	std::vector<Character> characters;
 
+	TextureManager textureMgr;
 
 };
 

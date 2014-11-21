@@ -13,6 +13,7 @@ private:
 	sf::Sprite sprite;
 	sf::Texture tex;
 
+	GameState* const gameState;
 
 };
 

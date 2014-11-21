@@ -6,8 +6,9 @@
 
 GameState::GameState()
 	: window(sf::VideoMode(800, 600), "SFML Window")
+	, textureMgr()
 {
-	characters.push_back(Character());
+	characters.push_back(Character(this));
 	//characters.push_back(Character());
 }
 
@@ -33,4 +34,9 @@ void GameState::update()
 sf::RenderWindow& GameState::getWindow()
 {
 	return window;
+}
+
+TextureManager* GameState::getTextureMgr()
+{
+	return &textureMgr;
 }

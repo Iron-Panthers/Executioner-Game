@@ -7,11 +7,21 @@
 class TextureManager
 {
 public:
-	sf::Texture getTexture();
+	/**
+	 * This function adds a texture to our textures map.
+	 */
+	void addTexture(const std::string& path);
+
+	/**
+	 * Returns a texture according to the path.
+	 */
+	sf::Texture& getTexture(const std::string& path);
 
 private:
-	std::map<std::string, sf::Texture>
-
+	/**
+	 * Stores the textures for retrieval from the sprites.
+	 */
+	std::map<std::string, sf::Texture> textures;
 };
 
 #endif
